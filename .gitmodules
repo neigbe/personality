@@ -1,0 +1,3 @@
+[submodule "src/fsdp_qlora"]
+	path = src/fsdp_qlora
+	url = git@github.com:AnswerDotAI/fsdp_qlora.git

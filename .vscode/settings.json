@@ -1,0 +1,4 @@
+{
+    "latex-workshop.latex.recipe.default": "lualatex -> bibtex -> lualatex * 2",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+}

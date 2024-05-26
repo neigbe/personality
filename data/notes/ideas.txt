@@ -1,0 +1,5 @@
+average stats per movie (e.g., personality breakdown)
+
+write code to simulate annotations
+
+filter to relevant queries

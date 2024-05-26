@@ -1,0 +1,32 @@
+name: personality
+
+channels:
+  - pytorch
+  - nvidia
+  - huggingface
+  - pyg
+
+dependencies:
+  - python==3.9
+  - pip
+  - ipython
+  - jupyter
+  - requests
+  - pytorch
+  - torchvision
+  - torchaudio
+  - transformers
+  - datasets
+  - evaluate
+  - openai
+  - scikit-learn
+  - pyg
+
+  - pip:
+    - tqdm
+    - pandas
+    - accelerate
+    - tiktoken
+    - sentencepiece
+    - networkx
+    - git+https://github.com/snap-stanford/deepsnap

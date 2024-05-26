@@ -1,0 +1,34 @@
+name: personality
+
+channels:
+  - pytorch
+  - nvidia
+
+dependencies:
+  - python==3.9
+  - pip
+  - ipython
+  - jupyter
+  - requests
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda==12.1
+  - openai
+  - scikit-learn
+
+  - pip:
+    - tqdm
+    - pandas
+    - accelerate
+    - tiktoken
+    - sentencepiece
+    - transformers
+    - evaluate
+    - datasets
+    - peft
+    - flash_attn
+    - bitsandbytes
+    - trl
+    - setuptools
+    - build

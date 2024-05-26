@@ -1,0 +1,4 @@
+data/cornell_movies/*.jsonl
+**/*.bin
+
+models/**
