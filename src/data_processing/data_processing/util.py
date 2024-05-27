@@ -72,23 +72,23 @@ def get_data_splits(data_type, test_size, valid_size, random_state=12):
 def row_to_msg(row, include_assistant=False):
     output = [{
             "role": "user",
-            "content": row.text
+            "content": row["text"]
         }]
     if include_assistant:
         output.append({
             "role": "assistant",
-            "content": row.label
+            "content": row["label"]
         })
     return output
 
-def convert_to_message_fmt(df, tkr):
+def convert_to_message_fmt(df, tkr, include_assistant=True):
     messages = []
     df.to_dict(orient="records")
     for row in df.iloc:
-        messages.append(row_to_msg(row, include_assistant=True))
+        messages.append(row_to_msg(row, include_assistant))
     messages_fmt = []
     for msg in messages:
-        fmt_msg = tkr.apply_chat_template(msg, tokenize=False)
+        fmt_msg = tkr.apply_chat_template(msg, tokenize=False, add_generation_prompt=(not include_assistant))
         messages_fmt.append(fmt_msg)
     final_df = pd.DataFrame(messages_fmt, columns=["text"])
     return final_df
@@ -111,5 +111,5 @@ def get_model_path(model, data_type):
 
 def get_most_recent_model_path(model, data_type):
     model_dir = f"{PWD}/models/{model}/{data_type}"
-    models = os.listdir(model_dir)
+    models = sorted(os.listdir(model_dir))
     return f"{model_dir}/{(models)[-1]}"
